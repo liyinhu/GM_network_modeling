@@ -3,4 +3,5 @@ Gut microbiota (GM) is a micro-ecosystem formed by a large number of microorgani
 * Stability assessment  
 * Vulnerability assessment  
 * Robustness assessment
-# Details
+# Thetory
+Before evaluating the stability of the GM networks, we first detect the effect of the nodes in a network by adopting the abundance-weighted mean interaction strength (*wMIS_i*) index. The *wMIS_i* index can be calculated for each node in a network with the following formula.  
