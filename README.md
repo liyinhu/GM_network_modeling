@@ -9,13 +9,14 @@ Before evaluating the stability of the GM networks, we first detect the effect o
 
 $$ wMIS_i = \frac{\sum_{{j}\ne{i}}b_j|R_{ij}|}{\sum_{{j}\ne{i}}b_j} $$
 
-where *i* stands for a node in a network, *j* stands for the node connected to node *i*, *bj* stands for the relative abundance of node *j*, and *R_ij* stands for the Spearman correlation coefficient between node *i* and *j*. Here we could get the *wMIS_i* for the nodes with the following script.
+where *i* stands for a node in a network, *j* stands for the node connected to node *i*, *bj* stands for the relative abundance of node *j*, and *R_ij* stands for the Spearman correlation coefficient between node *i* and *j*. Here we could get the *wMIS_i* for the nodes with the following script.<br>
 
+```
 perl get_MIS.pl <Averaged.abundances.for.microorganisms.csv> <Microbial.correlation.matrix.csv> <MIS.file>
 
 To evaluate the stability of the networks across the mice development, we detected the core nodes in the networks, and the core nodes were defined as the consistent bacteria that existed in the GM networks across different time points.<br>
 
-$$ S_a = \frac{\sum{i=1}^m wMIS_i}{\sum{j=1}^n wMIS_j} $$
+$$ S_a = \frac{\sum_{i=1}^m wMIS_i}{\sum_{j=1}^n wMIS_j} $$
 
 Here
 
