@@ -24,6 +24,7 @@ Second, we detect the core nodes in the networks, and the core nodes were define
 ```
 perl get_common_taxo.pl <Averaged_abundance.lst> <Common_tax.output>
 ```
+
 * <Averaged_abundance.lst>:the taxonomical abundance file list obtained from different time points;<br>
 * <Common_tax.output>: the output file contains common taxon.<br>
 
@@ -36,6 +37,7 @@ $i$ stands for a core node in the network $a$, $j$ stands for a node in the netw
 ```
 perl get_stability.pl <MIS.output.lst> <Common_tax.output> <Stability.output>
 ```
+
 * <MIS.output.lst>: the *wMIS* file list obtained for the networks at different time points;<br>
 * <Common_tax.output>: the output file contains common taxon;<br>
 * <Stability.output>: the stability of the networks.<br>
@@ -48,8 +50,19 @@ $$ E_a = \frac{n}{n(n-1)}\sum_{{i}\ne{j}}\frac{1}{d_{i,j}} $$
 
 where $n$ stand for the number of nodes in the network $a$, and $d_{i,j}$ stands for the number of edges in the shortest path between node $i$ and $j$.<br> 
 
-Then, we removed the node from the network one by one, evaluated the altered $E_a$ after the node removal, and selected the maximal EDR as the mEDR through the following formula.
+Then, we removed the node from the network one by one, evaluated the altered $E_a$ after the node removal, and selected the maximal EDR as the mEDR through the following formula.<br>
 
 $$ mEDR = max(\frac{E_a - E_{a}^'}{E_a}) $$
+
+The $E_a$ for the nodes and the EDR can be calculated with the following script.<br>
+
+```
+perl get_efficiency.pl <Shortest.path.csv> <MIS.output> <EDR.output>
+```
+
+* <Shorest.path.csv>: the shortest paths between every two nodes;<br>
+* <MIS.output>: the $wMIS_i$ index file obtained from the stability assessment;<br>
+* <EDR.output>: the EDR for the network after the node removal.<br>
+
 
 
