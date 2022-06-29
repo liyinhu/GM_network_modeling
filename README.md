@@ -5,11 +5,11 @@ Gut microbiota (GM) is a micro-ecosystem formed by a large number of microorgani
 * Network robustness assessment<br>
 # Usage
 ## Network stability assessment  
-First, we detect the effect of the nodes in a network by adopting the abundance-weighted mean interaction strength (*wMIS_i*) index before evaluating the stability of the GM networks. The *wMIS_i* index can be calculated for each node in a network with the following formula.<br>
+First, we detect the effect of the nodes in a network by adopting the abundance-weighted mean interaction strength ($wMIS_i$) index before evaluating the stability of the GM networks. The $wMIS_i$ index can be calculated for each node in a network with the following formula.<br>
 
 $$ wMIS_i = \frac{\sum_{{j}\ne{i}}b_j|R_{i,j}|}{\sum_{{j}\ne{i}}b_j} $$
 
-where *i* stands for a node in a network, *j* stands for the node connected to node *i*, *bj* stands for the relative abundance of node *j*, and *R_(i,j)* stands for the Spearman correlation coefficient between node *i* and *j*. Here we could get the *wMIS_i* for the nodes with the following script.<br>
+where $i$ stands for a node in a network, *j* stands for the node connected to node *i*, *bj* stands for the relative abundance of node *j*, and *R_(i,j)* stands for the Spearman correlation coefficient between node *i* and *j*. Here we could get the *wMIS_i* for the nodes with the following script.<br>
 
 ```
 perl get_MIS.pl <Averaged.abundances.for.microorganisms.csv> <Microbial.correlation.matrix.csv> <MIS.output>
