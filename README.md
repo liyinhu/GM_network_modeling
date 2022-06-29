@@ -7,9 +7,9 @@ Gut microbiota (GM) is a micro-ecosystem formed by a large number of microorgani
 ## Network stability assessment  
 First, we detect the effect of the nodes in a network by adopting the abundance-weighted mean interaction strength (*wMIS_i*) index before evaluating the stability of the GM networks. The *wMIS_i* index can be calculated for each node in a network with the following formula.<br>
 
-$$ wMIS_i = \frac{\sum_{{j}\ne{i}}b_j|R_{ij}|}{\sum_{{j}\ne{i}}b_j} $$
+$$ wMIS_i = \frac{\sum_{{j}\ne{i}}b_j|R_{i,j}|}{\sum_{{j}\ne{i}}b_j} $$
 
-where *i* stands for a node in a network, *j* stands for the node connected to node *i*, *bj* stands for the relative abundance of node *j*, and *R_ij* stands for the Spearman correlation coefficient between node *i* and *j*. Here we could get the *wMIS_i* for the nodes with the following script.<br>
+where *i* stands for a node in a network, *j* stands for the node connected to node *i*, *bj* stands for the relative abundance of node *j*, and *R_(i,j)* stands for the Spearman correlation coefficient between node *i* and *j*. Here we could get the *wMIS_i* for the nodes with the following script.<br>
 
 ```
 perl get_MIS.pl <Averaged.abundances.for.microorganisms.csv> <Microbial.correlation.matrix.csv> <MIS.output>
@@ -40,4 +40,11 @@ perl get_stability.pl <MIS.output.lst> <Common_tax.output> <Stability.output>
 * <Common_tax.output>: the output file contains common taxon;<br>
 * <Stability.output>: the stability of the networks.<br>
 
+## Network vulnerability assessment
+The vulnerability of the GM networks was measured by adopting the maximal global efficacy decreasing ratio (mEDR). <br>
+First, we need to calculate the averaged efficacy of a network (*E_a*) before calculating the mEDR, detecting the transferring speed of information in the network. *E_a* is calculated with the following formula.<br>
+
+$$ E_a = \frac{n}{n(n-1)}\sum_{{i}\ne{j}}\frac{1}{d_{i,j}} $$
+
+where *n* stand for the number of nodes in the network *a*, and *d_(i,j)* stands for the number of edges in the shortest path between node *i* and *j*. Then, we removed the node from the network one by one, evaluated the altered *E_a* after the node removal, and selected the maximal EDR as the mEDR through the following formula.
 
