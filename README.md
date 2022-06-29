@@ -46,5 +46,5 @@ First, we need to calculate the averaged efficacy of a network (*E_a*) before ca
 
 $$ E_a = \frac{n}{n(n-1)}\sum_{{i}\ne{j}}\frac{1}{d_{i,j}} $$
 
-where *n* stand for the number of nodes in the network *a*, and *d_(i,j)* stands for the number of edges in the shortest path between node *i* and *j*. Then, we removed the node from the network one by one, evaluated the altered *E_a* after the node removal, and selected the maximal EDR as the mEDR through the following formula.
+where *n* stand for the number of nodes in the network *a*, and *d_ij* stands for the number of edges in the shortest path between node *i* and *j*. Then, we removed the node from the network one by one, evaluated the altered *E_a* after the node removal, and selected the maximal EDR as the mEDR through the following formula.
 
