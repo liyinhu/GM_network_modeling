@@ -52,7 +52,7 @@ where $n$ stand for the number of nodes in the network $a$, and $d_{i,j}$ stands
 
 Then, we removed the node from the network one by one, evaluated the altered $E_a$ after the node removal, and selected the maximal EDR as the mEDR through the following formula.<br>
 
-$$ mEDR = max(\frac{E_a - E_{a}^'}{E_a}) $$
+$$  mEDR = max(\frac{E_a - E_{a}^{'}}{E_a}) $$
 
 The $E_a$ for the nodes and the EDR can be calculated with the following script.<br>
 
