@@ -1,6 +1,6 @@
 Time	Path
-1M	1M_mean.csv
-2M	2M_mean.csv
-3M	3M_mean.csv
-6M	6M_mean.csv
-9M	9M_mean.csv
+1M	1M_input/1M_mean.csv
+2M	2M_input/2M_mean.csv
+3M	3M_input/3M_mean.csv
+6M	6M_input/6M_mean.csv
+9M	9M_input/9M_mean.csv
