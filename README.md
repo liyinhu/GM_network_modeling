@@ -2,7 +2,7 @@
 Gut microbiota (GM) is a micro-ecosystem formed by a large number of microorganisms through competition and cooperation. The project constructs a complex network-based GM modeling approach to evaluate the topological features of the GM micro-ecosystem and provides computational simulations for users to infer the window period and bacterial candidates for GM intervention during disease progression. There are three major parts concluded in the program.<br>
 * Network stability assessment<br>
 * Network vulnerability assessment<br>
-* Network robustness assessment<br>
+* Computational simulation and network robustness assessment<br>
 # Algorithm and Usage
 ## Network stability assessment  
 First, we detect the effect of the nodes in a network by adopting the abundance-weighted mean interaction strength ($wMIS_i$) index before evaluating the stability of the GM networks. The $wMIS_i$ index can be calculated for each node in a network with the following formula.<br>
@@ -32,7 +32,7 @@ Lastly, we calculate the stability of the networks (S_a) with the $wMIS_i$ throu
 
 $$ S_a = \frac{\sum_{i=1}^m wMIS_i}{\sum_{j=1}^n wMIS_j} $$
 
-$i$ stands for a core node in the network $a$, $j$ stands for a node in the network $a$, $m$ stands for the number of core nodes in the network $a$, and $n$ stands for the number of a nodes in the network $a$. The stability of the networks can be calcuated with the follwing script.<br>
+$m$ stands for the number of core nodes in the network $a$, and $n$ stands for the number of all nodes in the network $a$. The stability of the networks can be calcuated with the follwing script.<br>
 
 ```
 perl get_stability.pl <MIS.output.lst> <Common_tax.output> <Stability.output>
@@ -64,5 +64,17 @@ perl get_efficiency.pl <Shortest.path.csv> <MIS.output> <EDR.output>
 * <MIS.output>: the $wMIS_i$ index file obtained from the stability assessment;<br>
 * <EDR.output>: the EDR for the network after the node removal.<br>
 
+## Computational simulation and network robustness assessment
+Here, we simulated the processes of hub bacteria-based target removal (TR) and non-hub bacteria-based random attack (RA) in the GM co-occurrence network and defined the network robustness ($R_a$) as the ratio of remaining bacterial $wMIS_i$ in the total $wMIS_i$ of a network after computational simulation. We determined the $R_a$ using the following formula:
 
+$$ R_a = \frac{\sum_{j=1}^n wMIS_j - \sum_{i=1}^n wMIS_i }{\sum_{j=1}^n wMIS_j} $$
 
+$m$ stands for the removed nodes in a network, and $n$ stands for all nodes in a network. The following script could assist us to simulate hub and non-hub bacteria removal, calculate the $R_a$ under different simulations, and repeat the process 10 times.<br>
+
+```
+perl robustness_evaluate.pl <MIS.output> <Bacteria.info> <Robustness.output>
+```
+
+* <MIS.output>: the $wMIS_i$ index file obtained from the stability assessment;<br>
+* <Bacteria.info>: a table containing the files of hub and non-hub bacteria, and the number of removed bacteria;<br> 
+* <Robustness.output>: the $R_a$ for after 10 times of simulation.<br>
