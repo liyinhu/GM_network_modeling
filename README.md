@@ -1,4 +1,4 @@
-# GM network modeling
+# GM network modeling instruction
 Gut microbiota (GM) is a micro-ecosystem formed by a large number of microorganisms through competition and cooperation. The project constructs a complex network-based GM modeling approach to evaluate the topological features of the GM micro-ecosystem and provides computational simulations for users to infer the window period and bacterial candidates for GM intervention during disease progression. There are three major parts concluded in the program.<br>
 * Network stability assessment<br>
 * Network vulnerability assessment<br>
@@ -78,3 +78,11 @@ perl robustness_evaluate.pl <MIS.output> <Bacteria.info> <Robustness.output>
 * <MIS.output>: the $wMIS_i$ index file obtained from the stability assessment;<br>
 * <Bacteria.info>: a table containing the files of hub and non-hub bacteria, and the number of removed bacteria;<br> 
 * <Robustness.output>: the $R_a$ for after 10 times of simulation.<br>
+
+# Contact
+
+Feel free to open an issue in Github or contact xjy005351@siat.ac.cn if you have any problem in using GM network modeling.
+
+# License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
