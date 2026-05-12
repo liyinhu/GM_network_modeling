@@ -80,7 +80,7 @@ perl robustness_evaluate.pl <MIS.output> <Bacteria.info> <Robustness.output>
 * <Robustness.output>: the $R_a$ for after 10 times of simulation.<br>
 
 # Citing
-If you use the GM network modeling, please cite the publication: Yinhu Li, Yijing Chen, Yingying Fan, Yuewen Chen & Yu Chen (2023) Dynamic network modeling of gut microbiota during Alzheimer’s disease progression in mice, Gut Microbes, 15:1, DOI: 10.1080/19490976.2023.2172672. 
+Li, Y., Chen, Y., Fan, Y., Chen, Y., & Chen, Y. (2023). Dynamic network modeling of gut microbiota during Alzheimer’s disease progression in mice. Gut Microbes, 15(1). 
 
 # Contact
 
